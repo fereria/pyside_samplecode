@@ -15,8 +15,7 @@ class SampleUI(QMainWindow):
         # Listにアイテムを追加する
         for i in ['a', 'b', 'c', 'd', 'e']:
             item = QListWidgetItem(i, self.listWidget)
-            # 背景色を指定したい場合
-            item.setBackground(QBrush(QColor(255, 0, 0)))
+            item.setFlags(item.flags() | Qt.ItemIsEditable)
 
         self.listWidget.itemClicked.connect(self.clicked)
 
